@@ -12,4 +12,7 @@ WORKDIR /var/www
 
 COPY . .
 
-RUN composer install
+ENTRYPOINT ["/var/www/docker/entrypoint.sh"]
+
+# PHP-FPM ishga tushadi
+CMD ["php-fpm"]
